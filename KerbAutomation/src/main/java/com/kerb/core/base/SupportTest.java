@@ -28,31 +28,17 @@ public class SupportTest implements IAutoConstant {
 		System.setProperty(CHROME_KEY, CHROME_PATH);
 	}
 	
-//	public SupportTest() {
-//		try {
-//			prop = new Properties();
-//		//	FileInputStream ip = new FileInputStream(projDir+ "/src/main/java/com/kerb/core/config/config.properties");
-//			FileInputStream ip = new FileInputStream(CONFIG_PATH);
-//			prop.load(ip);
-//			prop.getProperty("browser");
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
 	@BeforeMethod
 	public void initialization(){
 		String browserName = TestUtil.getPropertyValue("browser");
 		if(browserName.equals("chrome")){
-		//	System.setProperty("webdriver.chrome.driver", projDir+"/src/test/resources/drivers/chromeDrivers/Linux/chromedriver");	
+	
 			driver = new ChromeDriver(); 
 		}
-		else if(browserName.equals("FF")){
-		//	System.setProperty("webdriver.gecko.driver", projDir+"/src/test/resources/drivers/chromeDrivers/Linux/geckodriver");	
+		else if(browserName.equals("FF")){	
 			driver = new FirefoxDriver(); 
 		}
-		//driver.manage().deleteAllCookies();
+
 		String timeout=TestUtil.getPropertyValue("pageLoadTimout");
 		driver.manage().timeouts().implicitlyWait(Long.parseLong(timeout), TimeUnit.SECONDS);
 		driver.manage().window().maximize();
