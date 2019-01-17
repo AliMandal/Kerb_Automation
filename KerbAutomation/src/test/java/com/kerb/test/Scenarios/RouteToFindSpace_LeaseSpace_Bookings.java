@@ -8,21 +8,21 @@ import com.kerb.core.pages.FindSpacePage;
 import com.kerb.core.pages.LeaseSpacePage;
 
 public class RouteToFindSpace_LeaseSpace_Bookings extends SupportTest {
-	FindSpacePage FSP;
-	LeaseSpacePage LSP;
-	BookingsPage BP;
+	FindSpacePage fsp;
+	LeaseSpacePage lsp;
+	BookingsPage bp;
 	
 	@Test()
 	public void routeToFindSpace_LeaseSpace_Bookings() throws InterruptedException{
-		FSP = new FindSpacePage(driver);
-		FSP.clickOnFindASpaceTab();
-		FSP.verifyFindSpaceHeadingisAppearOrNot();
-		LSP=new LeaseSpacePage(driver);
-		LSP.clickOnLeaseASpaceTab();
-		LSP.verifyLeaseHeadingisAppearOrNot();
-		BP=new BookingsPage(driver);
-		BP.clickOnBookingsTab();
-		BP.verifyBookingsHeadingisAppearOrNot();
+		fsp = new FindSpacePage(driver);
+		fsp.clickOnFindASpaceTab();
+		fsp.verifyFindSpaceHeadingisAppearOrNot();
+		lsp=new LeaseSpacePage(driver);
+		lsp.clickOnLeaseASpaceTab();
+		lsp.verifyLeaseHeadingisAppearOrNot();
+		bp=new BookingsPage(driver);
+		bp.clickOnBookingsTab();
+		bp.verifyBookingsHeadingisAppearOrNot();
 	}
 	
 	
